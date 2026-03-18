@@ -1,4 +1,6 @@
 import { Welcome } from "../welcome/welcome";
+import { OverviewPage } from "../static/js/page/index/index.jsx";
+
 
 export function meta() {
   return [
@@ -8,5 +10,5 @@ export function meta() {
 }
 
 export default function Home() {
-  return <Welcome />;
+  return <OverviewPage />;
 }
