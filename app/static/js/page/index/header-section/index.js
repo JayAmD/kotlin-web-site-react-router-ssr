@@ -7,14 +7,12 @@ import cn from 'classnames';
 import {Container, Section} from "../../../components/layout";
 
 import {cardsData} from './data';
+import jetbrainsLogo from '../../../../../assets/images/jetbrains-logo.svg';
 
 import './index.scss';
 
 export function HeaderSection() {
     const textCn = useTextStyles();
-
-    const isMobile = window.innerWidth < 768;
-    const visibleCards = isMobile ? cardsData.slice(0, 2) : cardsData;
 
     return <div>
         <Section className="header-section">
@@ -31,7 +29,7 @@ export function HeaderSection() {
                     </div>
 
                     <div className="header-section__contributors">
-                        <img src="../../../../../assets/jetbrains-logo.svg" alt=""></img>
+                        <img src={jetbrainsLogo} alt=""></img>
                         <p className={textCn('rs-text-2')}>
                             Developed by <a className={textCn('rs-link')}
                                             href="https://www.jetbrains.com/">JetBrains</a> & Open-source <a
@@ -42,12 +40,12 @@ export function HeaderSection() {
                 </div>
 
                 <div className="kto-grid kto-grid-gap-16 kto-offset-top-48">
-                    {visibleCards.map(card => (
+                    {cardsData.map(card => (
                         <a key={card.id} href={card.link} className={cn(cardCn({
                             theme: 'dark',
                             mode: 'classic',
                             isClickable: true
-                        }), 'kto-col-3 kto-col-md-6 kto-col-sm-12')}>
+                        }), 'header-section__card kto-col-3 kto-col-md-6 kto-col-sm-12')}>
                             <img src={card.img} alt=""></img>
                             <h2 className={cn(textCn('rs-h3'), 'kto-offset-top-16')}>{card.title}</h2>
                             <p className={cn(textCn('rs-text-2'), 'kto-offset-top-16')}>{card.subTitle}</p>

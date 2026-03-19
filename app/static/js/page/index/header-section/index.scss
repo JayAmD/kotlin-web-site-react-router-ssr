@@ -21,4 +21,12 @@
     align-items: center;
     gap: 8px;
   }
+
+  &__card {
+    @media screen and (max-width: 767px) {
+      &:nth-child(n + 3) {
+        display: none;
+      }
+    }
+  }
 }

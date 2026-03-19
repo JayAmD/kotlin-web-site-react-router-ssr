@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import '@rescui/typography/lib/font-jb-sans-auto.css';
 
 import hljs from 'highlight.js/lib/core';
@@ -33,7 +32,3 @@ export const OverviewPage = () => (
         <OverviewPageContent/>
     </ThemeProvider>
 )
-
-const container = document.getElementById('react-app')
-
-ReactDOM.render(<OverviewPage/>, container);
