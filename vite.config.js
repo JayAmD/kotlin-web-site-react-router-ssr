@@ -4,7 +4,7 @@ import { defineConfig, transformWithEsbuild } from "vite";
 
 export default defineConfig({
   ssr: {
-    noExternal: [/^@rescui\//],
+    noExternal: [/^@rescui\//, /^@jetbrains\/kotlin-web-site-ui/],
   },
   plugins: [
     {
