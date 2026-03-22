@@ -16,7 +16,12 @@ export default function SiteLayout() {
   return (
     <div>
       <ThemeProvider theme="dark">
-        {isMounted ? <GlobalHeader searchConfig={{}} currentUrl={window.location.pathname} /> : null}
+        {/* Server renders skeleton, client renders the actual header.
+        GlobalHeader reads window, a browser environment property 
+        because of this it cannot be used with SSR and is rendered on the client side.
+        This is a limitation of the GlobalHeader */}
+        {isMounted ? <GlobalHeader searchConfig={{}} currentUrl={window.location.pathname} /> 
+        : <div style={{ height: 64 }} />}
         <Outlet />
         <GlobalFooter />
       </ThemeProvider>
