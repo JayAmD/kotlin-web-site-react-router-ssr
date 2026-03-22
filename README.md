@@ -5,6 +5,8 @@
 To build and run the migrated kotlin-web using Docker:
 
 ```bash
+cd .\kotlin-web-site-react-router-ssr\
+
 docker build -t kotlin-web-site-rr7-ssr .
 
 # Run the container
@@ -30,3 +32,6 @@ npm run dev
 ```
 
 Your application will be available at `http://localhost:5173`.
+\
+\
+
