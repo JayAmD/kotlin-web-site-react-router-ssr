@@ -9,7 +9,7 @@ export default defineConfig({
     {
       name: "jsx-in-js-for-static-app-files",
       async transform(code, id) {
-        if (/\/app\/static\/js\/.*\.js$/.test(id)) {
+        if (/\/app\/.*\.js$/.test(id)) {
           return transformWithEsbuild(code, id, {
             loader: "jsx",
             jsx: "automatic",

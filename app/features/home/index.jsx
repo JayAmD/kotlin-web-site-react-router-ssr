@@ -6,7 +6,6 @@ import kotlin from 'highlight.js/lib/languages/kotlin';
 import 'highlight.js/styles/github.css';
 hljs.registerLanguage('kotlin', kotlin);
 
-import {ThemeProvider} from '@rescui/ui-contexts';
 
 import {HeaderSection} from './header-section';
 import {LatestFromKotlinSection} from './latest-from-kotlin-section';
@@ -14,10 +13,10 @@ import {WhyKotlinSection} from './why-kotlin-section';
 import {UsageSection} from './usage-section';
 import {StartSection} from './start-section';
 
-import '../index/index.scss';
-import '../../../css/grid.scss'
+import './index.scss';
+import '../../styles/grid.scss'
 
-function OverviewPageContent() {
+export default function OverviewPageContent() {
     return <div className="overview-page">
         <HeaderSection/>
         <LatestFromKotlinSection/>
@@ -26,9 +25,3 @@ function OverviewPageContent() {
         <StartSection/>
     </div>
 }
-
-export const OverviewPage = () => (
-    <ThemeProvider theme="dark">
-        <OverviewPageContent/>
-    </ThemeProvider>
-)

@@ -7,8 +7,7 @@ import {
   ScrollRestoration,
 } from "react-router";
 
-// import "./app.css";
-import "./static/css/styles-v2.scss"
+import "./styles/styles-v2.scss"
 
 import faviconSvg from "./assets/images/favicon.svg";
 import faviconIco from "./assets/images/favicon.ico";

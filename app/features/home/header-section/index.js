@@ -7,7 +7,7 @@ import cn from 'classnames';
 import {Container, Section} from "../../../components/layout";
 
 import {cardsData} from './data';
-import jetbrainsLogo from '../../../../../assets/images/jetbrains-logo.svg';
+import jetbrainsLogo from '../../../assets/images/jetbrains-logo.svg';
 
 import './index.scss';
 

@@ -1,5 +1,5 @@
-import { OverviewPage } from "../static/js/page/index/index.jsx";
+import OverviewPageContent from "../features/home/index.jsx";
 
 export default function Home() {
-  return <OverviewPage />;
+  return <OverviewPageContent />;
 }
