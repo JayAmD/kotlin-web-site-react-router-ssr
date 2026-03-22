@@ -21,7 +21,7 @@ export default function SiteLayout() {
         because of this it cannot be used with SSR and is rendered on the client side.
         This is a limitation of the GlobalHeader */}
         {isMounted ? <GlobalHeader searchConfig={{}} currentUrl={window.location.pathname} /> 
-        : <div style={{ height: 64 }} />}
+        : <div style={{ height: 64, backgroundColor: "#27282C" }} />}
         <Outlet />
         <GlobalFooter />
       </ThemeProvider>
