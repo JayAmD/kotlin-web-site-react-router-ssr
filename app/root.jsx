@@ -7,20 +7,73 @@ import {
   ScrollRestoration,
 } from "react-router";
 
-import "./app.css";
+// import "./app.css";
+import "./static/css/styles-v2.scss"
 
-export const links = () => [
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+import faviconSvg from "./assets/images/favicon.svg";
+import faviconIco from "./assets/images/favicon.ico";
+import appleTouchIcon from "./assets/images/apple-touch-icon.png";
+import appleTouchIcon72 from "./assets/images/apple-touch-icon-72x72.png";
+import appleTouchIcon114 from "./assets/images/apple-touch-icon-114x114.png";
+import appleTouchIcon144 from "./assets/images/apple-touch-icon-144x144.png";
+
+
+export const meta = () => [
+  { title: "Kotlin Programming Language" },
   {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
+    name: "description",
+    content: "Kotlin is a modern, statically typed programming language.",
+  },
+
+  // Open Graph metadata (social)
+  { property: "og:title", content: "Kotlin Programming Language" },
+  { property: "og:type", content: "website" },
+  { property: "og:url", content: "https://kotlinlang.org/" },
+  {
+    property: "og:image",
+    content: "https://kotlinlang.org/assets/images/open-graph/general.png",
   },
   {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+    property: "og:description",
+    content: "Kotlin is a modern, statically typed programming language.",
+  },
+  { property: "og:site_name", content: "Kotlin" },
+
+  // Twitter Card metadata (social)
+  { name: "twitter:card", content: "summary_large_image" },
+  { name: "twitter:site", content: "@kotlin" },
+  { name: "twitter:title", content: "Kotlin Programming Language" },
+  {
+    name: "twitter:description",
+    content: "Kotlin is a modern, statically typed programming language.",
+  },
+  {
+    name: "twitter:image", 
+    content: "https://kotlinlang.org/assets/images/twitter/general.png",
   },
 ];
+
+export const links = () => [
+  { rel: "dns-prefetch", 
+    href: "https://fonts.googleapis.com" },
+  {
+    rel: "dns-prefetch",
+    href: "https://fonts.gstatic.com",
+  },
+  {
+    rel: "dns-prefetch",
+    href: "//resources.jetbrains.com"
+  },
+
+  // App icons
+  { rel: "icon", type: "image/svg+xml", href: faviconSvg },
+  { rel: "alternate icon", href: faviconIco },
+  { rel: "apple-touch-icon", href: appleTouchIcon },
+  { rel: "apple-touch-icon", sizes: "72x72", href: appleTouchIcon72 },
+  { rel: "apple-touch-icon", sizes: "114x114", href: appleTouchIcon114 },
+  { rel: "apple-touch-icon", sizes: "144x144", href: appleTouchIcon144 },
+];
+
 
 export function Layout({ children }) {
   return (
