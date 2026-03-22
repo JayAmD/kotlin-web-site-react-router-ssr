@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
-import { Outlet, useLocation } from "react-router";
-import Header from "@jetbrains/kotlin-web-site-ui/out/components/header";
-import Footer from "@jetbrains/kotlin-web-site-ui/out/components/footer";
+import { Outlet } from "react-router";
+import GlobalHeader from "@jetbrains/kotlin-web-site-ui/out/components/header";
+import "@jetbrains/kotlin-web-site-ui/out/components/header/index.css";
+import GlobalFooter from "@jetbrains/kotlin-web-site-ui/out/components/footer";
+import "@jetbrains/kotlin-web-site-ui/out/components/footer/index.css";
+import { ThemeProvider } from "@rescui/ui-contexts";
 
 export default function SiteLayout() {
   const [isMounted, setIsMounted] = useState(false);
@@ -12,9 +15,11 @@ export default function SiteLayout() {
 
   return (
     <div>
-      {isMounted ? <Header searchConfig={{}} currentUrl={window.location.pathname} /> : null}
-      <Outlet />
-      <Footer />
+      <ThemeProvider theme="dark">
+        {isMounted ? <GlobalHeader searchConfig={{}} currentUrl={window.location.pathname} /> : null}
+        <Outlet />
+        <GlobalFooter />
+      </ThemeProvider>
     </div>
   );
 }
